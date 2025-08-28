@@ -1,0 +1,54 @@
+openapi: 3.1.0
+
+info:
+  title: Tasteorama docs
+  description: This is a documentation for Tasteorama website
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: https://united-team-finally-project-backend.onrender.com
+tags:
+  - name: Users
+    description: Operation with users
+  - name: Recipes
+    description: Operation with recipes
+  - name: Categories
+    description: Operation with categories
+  - name: Ingredients
+    description: Operation with ingredients
+paths:
+  /users:
+    get:
+      $ref: '../swagger/paths/users/get.yaml'
+  /categories:
+    get:
+      $ref: '../swagger/paths/categories/get.yaml'
+  /recipes:
+    get:
+      $ref: '../swagger/paths/recipes/get.yaml'
+    post:
+      $ref: '../swagger/paths/recipes/post.yaml'
+  /recipes/{id}:
+    get:
+      $ref: '../swagger/paths/recipes/{id}/get.yaml'
+    patch:
+      $ref: '../swagger/paths/recipes/{id}/patch.yaml'
+    delete:
+      $ref: '../swagger/paths/recipes/{id}/delete.yaml'
+  /recipes/favourites:
+    get:
+      $ref: '../swagger/paths/recipes/favourites/get.yaml'
+  /recipes/favourites/{id}:
+    patch:
+      $ref: '../swagger/paths/recipes/favourites/{id}/patch.yaml'
+  /ingredients:
+    get:
+      $ref: '../swagger/paths/ingredients/get.yaml'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
