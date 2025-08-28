@@ -7,14 +7,14 @@ export async function registerController(request, response) {
 
   response.cookie('sessionId', session._id, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
 
   response.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
@@ -38,14 +38,14 @@ export async function loginController(request, response) {
 
   response.cookie('sessionId', session._id, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
 
   response.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
@@ -70,14 +70,14 @@ export async function refreshUserSessionController(request, response) {
 
   response.cookie('sessionId', session._id, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
 
   response.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
-    expire: session.refreshTokenValidUntil,
+    expires: session.refreshTokenValidUntil,
     sameSite: "None",
     secure: true,
   });
